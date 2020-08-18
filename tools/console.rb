@@ -26,7 +26,7 @@ spaghetti_carbonara = MenuItem.new(zilla, carbonara, 30)
 sauteed_halibut = MenuItem.new(sunset, halibut, 32)
 sushi = MenuItem.new(nil, tuna_roll, 18)
 
-
+# CARYN SAYS: looks like a good number of instances to test with! 
 
 # ===== WARNING! DO NOT EDIT BELOW THIS LINE ===== #
 binding.pry

@@ -1,7 +1,8 @@
 class Recipe
-attr_reader :name
-attr_accessor :description
-@@all = []
+    # CARYN SAYS: indent attrs and class variables! 
+    attr_reader :name
+    attr_accessor :description
+    @@all = []
     def initialize(name, description)
         @name = name
         @description = description
@@ -34,6 +35,7 @@ attr_accessor :description
         # end
         # highest_price
         menu_items.max{|a,b| a.price <=> b.price}
+        # CARYN SAYS: just make sure what you're returning here is the price (integer)!!!
     end
 
     def cheapest_restaurant
@@ -42,6 +44,11 @@ attr_accessor :description
 
     # is it cheating?
     def self.inactive
+        # CARYN SAYS: this isn't cheating but nor is it entirely correct.
+        # Your logic is allllllmost there. A recipe is inactive if it doesnt have any MenuItems,
+        # or through that, restaurants.
+        # so we need to filter over self.all and grab just Recipe instances where the restaurants array is empty 
+        # [] and nil are not the same 
         MenuItem.all.select{|recipe| recipe.restaurant == nil}
     end
 
